@@ -1,0 +1,53 @@
+.fyp{
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:10px;
+  color: #4290f5 !important;
+}
+
+a:hover{
+  color: #4290f5 !important;
+}
+
+a,img{
+  cursor:pointer !important;
+}
+
+
+
+.fyp1{
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:25px;
+}
+
+#cc{
+  font-family: Montserrat-Regular;
+  font-size: 14px;
+  color: #4290f5;
+  font-weight:500;
+  display:none;
+}
+
+
+.simplemodal{
+  margin-top:20vh;
+}
+
+.modal-backdrop{
+    opacity:0.75 !important;
+}
+
+#dismiss{
+  color:white;
+  background-color: #4290f5;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #000 !important;
+}

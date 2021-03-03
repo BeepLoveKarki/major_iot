@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+   
+    <link href="vendor/bootstrap-4.1/css/bootstrap.min.css" rel="stylesheet" media="all">
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendor/bootstrap-4.1/js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/js/bootstrap.min.js"></script>
+   </head>
+   
+   <body>
+   
+   <style type="text/css">
+       .controls{
+	     width: auto;
+		 overflow-x: scroll;
+	   }
+	  .stats{
+	    font-family: "Helvetica Neue",sans-serif;
+		border: none !important;
+		width: 100%;
+		height: 500px;
+	   }
+	  .stats thead tr , .stats tbody tr{
+	    border: none !important;
+	  }
+	  .stats thead{
+	        color: rgb(17, 17, 17);
+	  }
+	  
+	</style>
+   
+    <script>
+	
+	function comma(x) {
+       return Number(x).toLocaleString(); 
+    }
+	
+	  $.get("https://pomber.github.io/covid19/timeseries.json").then((res)=>{
+	    $(".data").empty();
+	    let cons=["Nepal","US","Spain","Italy","Germany","France","China","Iran","United Kingdom","Turkey"];
+		let cons1=["NPL","USA","ESP","ITA","DEU","FRA","CHN","IRN","GBR","TUR"];
+		let imgs=new Array();
+		cons1.forEach((val,index)=>{
+		  imgs.push("https://static.elfsight.com/apps/coronavirus-stats/flags/"+val.toLowerCase()+".svg");
+		});
+		for(let i=0;i<cons.length;i++){
+		   let j=res[cons[i]].length-1;
+		   let data=res[cons[i]][j];
+		   $(".data").append("<tr id='con-"+i.toString()+"'></tr>");
+		   $("#con-"+i.toString()).append("<th><span><img style='width:20%;\' src='"+imgs[i]+"'/>&nbsp;&nbsp;"+cons1[i]+"</span></th><td>"+comma(data["confirmed"])+"</td><td>"+comma(data["deaths"])+"</td><td>"+comma(data["recovered"])+"</td></th>");
+		}
+      });
+	</script>
+	
+  <div class="controls">
+  
+	<table class="table table-striped stats">
+	  
+	  <thead>
+       <tr>
+         <th scope="col"></th>
+         <th scope="col">CASES</th>
+         <th scope="col">DEATHS</th>
+         <th scope="col">RECOVERED</th>
+       </tr>
+     </thead>
+	 
+	 <tbody class="data">
+
+	</tbody>
+	 
+	</table>
+
+   </div>
+   
+   </body>
+
+</html>

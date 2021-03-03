@@ -1,0 +1,134 @@
+.wrapper{
+    align-items: stretch;
+}
+#head{
+  margin-top:10px;
+}
+
+.tables{
+  margin-top:30px;
+}
+
+i,a{
+  cursor:pointer;'
+}
+
+.datas{
+  margin-top:2%;
+}
+
+.simplemodal{
+  margin-top:20vh;
+}
+
+.modal-backdrop{
+    opacity:0.75 !important;
+}
+
+#dismiss{
+  color:white;
+  background-color: #4290f5;
+}
+
+body{
+   overflow-x:hidden;
+}
+
+
+
+.wrap {
+    position: fixed;
+    top: 50%;
+    left: 40%;
+}
+
+.stepper {
+  display: flex;
+  overflow: auto;
+  width: 200% !important;
+  background: #FF4957;
+  cursor: pointer;
+  width: 130px;
+  height: 130px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 64px;
+  box-shadow: -1px 57px 80px -17px rgba(255, 73, 87, 0.25);
+  overflow: hidden;
+  z-index: 2;
+
+  span {
+    user-select: none;
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateY(0) translateX(-50%);
+
+    &.active {
+      transform: translateY(0) translateX(-50%);
+    }
+
+    &.hide {
+      opacity: 0;
+    }
+  }
+}
+
+.arrow-top {
+  position: absolute;
+  top: -60px;
+  left: 150px;
+  transform: translateX(-50%);
+  user-select: none;
+  width: 50px;
+}
+
+.arrow-bottom {
+  position: absolute;
+  bottom: -57px;
+  left: 150px;
+  transform: translateX(-50%);
+  user-select: none;
+  width: 50px;
+}
+
+#stirbutton{
+   margin-bottom:30px !important;
+}
+
+
+
+
+
+
+.github {
+  width: 40px;
+  height: 40px;
+  background: url(http://alikinvv.github.io/github.svg) no-repeat center;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  animation: github 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s infinite;
+}
+
+@keyframes github {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.desc {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: #ffbac1;
+}
